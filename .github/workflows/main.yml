@@ -20,8 +20,7 @@ jobs:
      
       - name: Compile Code
         run: |
-javac -cp "./lib/*:." -d out/production/softwaretesting softwaretesting/src/LoginAppTest.java softwaretesting/src/LoginApp.java
-      - name: Run Tests
-        run: |
-           cd src
-           java -cp ".;../lib/*" org.junit.runner.JUnitCore UnitTesting
+          javac -cp ".;./lib/*" softwaretesting/src/LoginAppTest.java softwaretesting/src/LoginApp.java
+          run: |
+           cd softwaretesting/src
+           org.junit.platform.console.ConsoleLauncher --select-class LoginAppTest
