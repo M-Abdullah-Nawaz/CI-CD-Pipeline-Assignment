@@ -20,7 +20,7 @@ jobs:
      
       - name: Compile Code
         run: |
-           javac -cp "./lib/*" src/LoginAppTest.java src/LoginApp.java
+           javac -cp "./lib/*" softwaretesting/src/LoginAppTest.java softwaretesting/src/LoginApp.java
       - name: Run Tests
         run: |
            cd src
