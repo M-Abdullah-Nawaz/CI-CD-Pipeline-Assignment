@@ -12,7 +12,7 @@ public class LoginAppTest {
         String inputEmail = "johndoe@example.com"; // correct email
         String inputPassword = "password123"; //
         String expectedResult = "John Doe";
-        String actualResult = loginApp.authenticateUser(inputEmail);
+        String actualResult = loginApp.authenticateUser(inputEmail, inputPassword );
         assertEquals("John Doe", expectedResult, actualResult);
         System.out.println("Test Case 1 Passed");
     }
@@ -26,7 +26,7 @@ public class LoginAppTest {
         loginApp.emailField.setText(inputEmail);
         loginApp.passwordField.setText(inputPassword);
 
-        String actualResult = loginApp.authenticateUser(inputEmail);
+        String actualResult = loginApp.authenticateUser(inputEmail, inputPassword );
 
         assertNull(actualResult, "Test Case 2 Failed: User should not be found.");
         System.out.println("Test Case 2 Passed");
@@ -42,7 +42,7 @@ public class LoginAppTest {
         loginApp.passwordField.setText(inputPassword);
 
         // Assuming your authenticateUser method checks for password validation as well
-        String actualResult = loginApp.authenticateUser(inputEmail); // Adjust if needed to include password
+        String actualResult = loginApp.authenticateUser(inputEmail, inputPassword ); // Adjust if needed to include password
 
         assertNull(actualResult, "Test Case 3 Failed: User should not be found with incorrect password.");
         System.out.println("Test Case 3 Passed");
@@ -56,7 +56,7 @@ public class LoginAppTest {
         loginApp.emailField.setText("");
         loginApp.passwordField.setText(inputPassword);
 
-        String actualResult = loginApp.authenticateUser(""); // Call with empty email
+        String actualResult = loginApp.authenticateUser("",""); // Call with empty email
 
         assertNull(actualResult, "Test Case 4 Failed: Email field should be empty.");
         System.out.println("Test Case 4 Passed");
@@ -70,7 +70,7 @@ public class LoginAppTest {
         loginApp.emailField.setText(inputEmail);
         loginApp.passwordField.setText("");
 
-        String actualResult = loginApp.authenticateUser(inputEmail); // Call with empty password
+        String actualResult = loginApp.authenticateUser(inputEmail,""); // Call with empty password
 
         assertNull(actualResult, "Test Case 5 Failed: Password field should be empty.");
         System.out.println("Test Case 5 Passed");
